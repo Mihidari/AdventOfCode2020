@@ -31,7 +31,20 @@ const resolve = (input) => {
 }
 
 
+//Version plus courte
+const resolve2 = (input) => {
+    const id = []
+    for(let v of input) {
+        id.push(parseInt(v.substring(0, 7).replace(/[F]/g, 0).replace(/[B]/g, 1), 2) * 8 + parseInt(v.substring(7).replace(/[L]/g, 0).replace(/[R]/g, 1), 2))
+    }
+    id.sort()
+    for(let i = 0; i < id.length; i++) {
+        if(id[i] !== id[i+1] - 1) return id[i+1]-1
+    }
+}
+
+
 (async () => {
     const input = await getInput(String)
-    console.log(resolve(input))
+    console.log(resolve2(input))
 })()
