@@ -1,5 +1,7 @@
 const getInput = require("../injectInput")
 
+const divide = (range) => Math.ceil((range[1]- range[0])/2)
+
 const resolve = (input) => {
 
     const id = []
@@ -11,13 +13,11 @@ const resolve = (input) => {
         const rangeColumn = [0, 7]
 
         for(let letter of row) {
-            if(letter === "F") rangeRow[1] -= Math.ceil((rangeRow[1]- rangeRow[0])/2)
-            if(letter === "B") rangeRow[0] += Math.ceil((rangeRow[1]- rangeRow[0])/2)
+            letter === "F" ? rangeRow[1] -= divide(rangeRow) : rangeRow[0] += divide(rangeRow)
         }
 
         for(let letter of column) {
-            if(letter === "L") rangeColumn[1] -= Math.ceil((rangeColumn[1]- rangeColumn[0])/2)
-            if(letter === "R") rangeColumn[0] += Math.ceil((rangeColumn[1]- rangeColumn[0])/2)
+            letter === "L" ? rangeColumn[1] -= divide(rangeColumn) : rangeColumn[0] += divide(rangeColumn)
         }
 
         id.push(rangeRow[0] * 8 + rangeColumn[0])
