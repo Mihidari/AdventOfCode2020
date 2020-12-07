@@ -16,7 +16,6 @@ const resolve = (input) => {
     let sum = 0
     for(let v of ans) {
         let words = v.split(' ')
-        let fq = {}
 
         for(let i = 97; i <= 122; i++) {
             let test = true
