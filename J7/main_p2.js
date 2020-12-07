@@ -1,7 +1,6 @@
 const getInput = require("../injectInput")
 
 const resolve = (input) => {
-
     const graph = {}
 
     for(let rule of input) {
