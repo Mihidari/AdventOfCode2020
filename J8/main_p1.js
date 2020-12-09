@@ -7,7 +7,6 @@ const resolve = (input) => {
     while(true) {
         if(history.includes(seq)) return acc
         history.push(seq)
-        console.log(input[seq])
         let [instruction, value] = input[seq].split(' ')
         switch (instruction) {
             case 'acc':

@@ -37,7 +37,6 @@ const resolve = (input) => {
     return acc
 }
 
-
 (async () => {
     const input = await getInput(String)
     console.log(resolve(input))
