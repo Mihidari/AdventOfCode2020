@@ -1,5 +1,6 @@
 const getInput = require("../injectInput")
 
+//Part1
 const checkAdjacent = (seatY, seatX, model) => {
     let empty = 0, occupied = 0
     for(let i=seatY-1; i < seatY+2; i++) {
